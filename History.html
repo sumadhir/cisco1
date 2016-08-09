@@ -1,0 +1,17 @@
+﻿<div ng-controller="HistoryController">
+
+ <div id="example-one">
+        <span style="text-align: center; padding-left: 5px; padding-right: 8px" ng-class="{ 'current_page_item': settingsCheck,'blueBorder':settingsCheck}">
+            <a class="tabs" ng-click="settings(true)">User Settings </a></span>
+        <span style="text-align: center; padding-left: 5px; padding-right: 8px" ng-class="{ 'current_page_item': configCheck,'blueBorder':configCheck}">
+            <a class="tabs" ng-click="settings(false)">User Apps </a></span>
+    </div>
+    
+
+    <div class="GridHeader">User History</div>
+
+    <div ng-if="HistoryGrid.data.length > 0" ui-grid="HistoryGrid" ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning ui-grid-exporter ui-grid-tree-view class="testStepGrid" ng-style="getTableHeight(HistoryGrid)"></div>
+    <div ng-if="!HistoryGrid.data.length > 0" class="noRecordsFound">{{historyMessage}}</div>
+    <br />
+    
+</div>
